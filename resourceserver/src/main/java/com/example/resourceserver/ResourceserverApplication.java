@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Collections;
 import java.util.Map;
 
 @EnableMethodSecurity
@@ -28,8 +29,8 @@ class GreetingsService {
 
     @PreAuthorize("hasAuthority('SCOPE_user.read')")
     public Map<String, String> greet() {
-        var jwt = (Jwt) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        return Map.of("message", "Hello " + jwt.getSubject());
+        Jwt jwt = (Jwt) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return Collections.singletonMap("message", "Hello " + jwt.getSubject());
     }
 }
 
