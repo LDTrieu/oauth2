@@ -21,6 +21,7 @@ public class ResourceserverApplication {
     public static void main(String[] args) {
         SpringApplication.run(ResourceserverApplication.class, args);
     }
+    
 
 }
 

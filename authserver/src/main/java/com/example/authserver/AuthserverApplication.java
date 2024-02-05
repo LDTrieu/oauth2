@@ -16,7 +16,7 @@ public class AuthserverApplication {
 
     @Bean
     public InMemoryUserDetailsManager inMemoryUserDetailsManager() {
-        UserDetails one = User.withUsername("sjohnr").password("pw").roles("admin").build();
+        UserDetails one = User.withUsername("minhto").password("minhto").roles("admin").build();
         UserDetails two = User.withUsername("jlong").password("pw").roles("user").build();
         return new InMemoryUserDetailsManager(one, two);
     }
